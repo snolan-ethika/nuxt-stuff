@@ -26,7 +26,7 @@ await getUser()
 <template>
   <UserAuth :user="user">
     <h1>Profile</h1>
-    <a href="#" @click="logout">Logout</a>
+    <a style="cursor: pointer;" @click="logout">Logout</a>
   </UserAuth>
 </template>
 

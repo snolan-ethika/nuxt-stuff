@@ -9,7 +9,7 @@ const setUser = () => {
 
 <template>
   <h1>Login</h1>
-  <a @click="setUser">set user</a>
+  <a style="cursor: pointer;" @click="setUser">set user</a>
 </template>
 
 <style scoped>
