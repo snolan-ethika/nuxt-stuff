@@ -1,9 +1,11 @@
 <script setup lang="ts">
 const setUser = () => {
-  localStorage.setItem('user', JSON.stringify({
-    name: 'shawn'
-  }))
-  return navigateTo('/clients/profile')
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('user', JSON.stringify({
+      name: 'shawn'
+    }))
+    return navigateTo('/clients/profile')
+  }
 }
 </script>
 
