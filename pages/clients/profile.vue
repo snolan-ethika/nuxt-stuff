@@ -17,6 +17,7 @@ const getUser = async () => {
 const logout = () => {
   if(typeof window !== 'undefined') {
     localStorage.removeItem('user')
+    user.value = undefined
     return navigateTo('/login')
   }
 }
