@@ -9,8 +9,6 @@ const getUser = async () => {
       const localUser = localStorage.getItem('user')
       if (localUser) {
         user.value = JSON.parse(localUser)
-      } else {
-        return navigateTo('/logout')
       }
     }
   }
