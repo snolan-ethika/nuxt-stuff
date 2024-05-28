@@ -23,11 +23,6 @@ export default <RouterConfig>{
             component: () => import('~/pages/clients/login.vue').then(r => r.default || r)
         },
         {
-            name: 'clients-logout',
-            path: '/logout',
-            component: () => import('~/pages/clients/login.vue').then(r => r.default || r)
-        },
-        {
             name: 'clients-profile',
             path: '/clients/profile',
             component: () => import('~/pages/clients/profile.vue').then(r => r.default || r)

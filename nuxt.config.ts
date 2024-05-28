@@ -4,6 +4,5 @@ export default defineNuxtConfig({
     routeRules: {
         '/': { prerender: true },
         '/clients/profile': { appMiddleware: ['clients-only'] },
-        // '/logout': { appMiddleware: ['clients-logout'] }
     }
 })
