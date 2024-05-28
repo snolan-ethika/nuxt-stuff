@@ -1,6 +1,6 @@
 import type { RouterConfig } from '@nuxt/schema'
 
-export default <RouterConfig> {
+export default <RouterConfig>{
     routes: (_routes) => [
         {
             name: 'home',
@@ -17,5 +17,20 @@ export default <RouterConfig> {
             path: '/talent',
             component: () => import('~/pages/talent.vue').then(r => r.default || r)
         },
-    ],
+        {
+            name: 'clients-login',
+            path: '/login',
+            component: () => import('~/pages/clients/login.vue').then(r => r.default || r)
+        },
+        {
+            name: 'clients-logout',
+            path: '/logout',
+            component: () => import('~/pages/clients/login.vue').then(r => r.default || r)
+        },
+        {
+            name: 'clients-profile',
+            path: '/clients/profile',
+            component: () => import('~/pages/clients/profile.vue').then(r => r.default || r)
+        }
+    ]
 }
