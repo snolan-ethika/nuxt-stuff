@@ -1,4 +1,5 @@
 # Nuxt Example
+###### _(this is purely for experimental exercises)_
 
 Deploy your [Nuxt](https://nuxt.com) project to Vercel with zero configuration.
 
