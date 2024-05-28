@@ -5,11 +5,11 @@ const user: any = ref(undefined)
 
 const getUser = async () => {
   if (typeof window !== 'undefined') {
-    if (!user.value) {
-      const localUser = localStorage.getItem('user')
-      if (localUser) {
-        user.value = JSON.parse(localUser)
-      }
+    const localUser = localStorage.getItem('user')
+    if (localUser) {
+      user.value = JSON.parse(localUser)
+    } else {
+      user.value = undefined
     }
   }
 }
