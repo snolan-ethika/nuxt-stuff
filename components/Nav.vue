@@ -12,9 +12,9 @@ watch(userStore.state, (value) => {
 <template>
   <RouterLink to="/">Home</RouterLink>
   |
-  <RouterLink to="/artist">Artist</RouterLink>
+  <RouterLink to="/artists">Artists</RouterLink>
   |
-  <RouterLink to="/talent">Talent</RouterLink>
+  <RouterLink to="/talents">Talents</RouterLink>
   |
   <RouterLink v-if="user?.name" to="/clients/profile">Profile</RouterLink>
   <RouterLink v-if="!user?.name" to="/clients/login">Login</RouterLink>

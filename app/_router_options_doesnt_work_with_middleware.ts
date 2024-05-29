@@ -10,12 +10,12 @@ export default <RouterConfig>{
         {
             name: 'artist',
             path: '/artist',
-            component: () => import('~/pages/artist.vue').then(r => r.default || r)
+            component: () => import('~/pages/artists/index.vue').then(r => r.default || r)
         },
         {
             name: 'talent',
             path: '/talent',
-            component: () => import('~/pages/talent.vue').then(r => r.default || r)
+            component: () => import('~/pages/talents/index.vue').then(r => r.default || r)
         },
         {
             name: 'clients-login',

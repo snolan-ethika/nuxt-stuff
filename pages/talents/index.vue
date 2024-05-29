@@ -1,21 +1,23 @@
 <script setup lang="ts">
 const artist: any = ref(undefined)
-const getArtist = (): Promise<any> => {
+const getArtist = async (): Promise<any> => {
   return new Promise((resolve) => {
     artist.value = {
-      id: 1234567890,
-      name: 'Artist Name'
+      id: 9123456780,
+      name: 'Talent Name'
     }
     resolve(artist.value)
   })
 }
 
-await getArtist()
+onMounted(async () => {
+  await getArtist()
+})
 
 /*
- * Title working with reactive values via nuxt
+ * Title NOT working with reactive values via nuxt
  * This will work in your browser,
- * As well as in the page source
+ * But if you view the page source, you'll see it's not working
  */
 useSeoMeta({
   title: () => `Artist ${artist?.value?.name}`
@@ -23,7 +25,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <h1>Artist Page</h1>
+  <h1>Talents Page</h1>
 </template>
 
 <style scoped>
