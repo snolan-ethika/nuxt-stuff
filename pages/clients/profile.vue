@@ -11,7 +11,10 @@ const getUser = async () => {
     } else {
       user.value = undefined
     }
+  } else {
+    user.value = undefined
   }
+  console.log('user', user.value)
 }
 
 const logout = () => {
@@ -19,6 +22,8 @@ const logout = () => {
     localStorage.removeItem('user')
     user.value = undefined
     return navigateTo('/login')
+  } else {
+    user.value = undefined
   }
 }
 
