@@ -14,7 +14,6 @@ const getUser = async () => {
   } else {
     user.value = undefined
   }
-  console.log('user', user.value)
 }
 
 const logout = () => {
@@ -31,7 +30,7 @@ await getUser()
 </script>
 
 <template>
-  <UserAuth :user="user">
+  <UserAuth v-if="user" :user="user">
     <h1>Profile</h1>
     <a style="cursor: pointer;" @click="logout">Logout</a>
   </UserAuth>

@@ -5,13 +5,11 @@ const props = defineProps({
     default: {}
   }
 })
-const tempUser: any = ref(props.user)
-console.log('tempUser', tempUser)
 </script>
 
 <template>
-  <div v-if="tempUser">
-    <h1>Hello {{ tempUser?.name }}</h1>
+  <div v-if="props?.user">
+    <h1>Hello {{ props?.user?.name }}</h1>
     <slot></slot>
   </div>
 </template>
