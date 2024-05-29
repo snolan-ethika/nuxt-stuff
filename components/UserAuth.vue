@@ -6,6 +6,7 @@ const props = defineProps({
   }
 })
 const tempUser: any = ref(props.user)
+console.log('tempUser', tempUser)
 </script>
 
 <template>
