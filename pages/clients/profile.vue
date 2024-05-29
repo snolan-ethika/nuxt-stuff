@@ -1,36 +1,27 @@
 <script setup lang="ts">
 import UserAuth from '~/components/UserAuth.vue'
+import { userStore } from '~/stores/user'
 
-const user: any = ref(undefined)
-
-const getUser = async () => {
-  if (typeof window !== 'undefined') {
-    const localUser = localStorage.getItem('user')
-    if (localUser) {
-      user.value = JSON.parse(localUser)
-    } else {
-      user.value = undefined
-    }
-  } else {
-    user.value = undefined
-  }
-}
+const theUser = userStore.getUser()
+const user: any = ref(theUser)
 
 const logout = () => {
-  if(typeof window !== 'undefined') {
-    localStorage.removeItem('user')
-    user.value = undefined
-    return navigateTo('/login')
-  } else {
-    user.value = undefined
-  }
+  userStore.logout()
+  return navigateTo('/clients/login')
 }
 
-await getUser()
+watch(userStore.state, (value) => {
+  const theUser: any = value?.user
+  user.value = theUser ? theUser : {}
+})
+
+definePageMeta({
+  middleware: ['clients-only']
+})
 </script>
 
 <template>
-  <UserAuth v-if="user" :user="user">
+  <UserAuth :user="user">
     <h1>Profile</h1>
     <a style="cursor: pointer;" @click="logout">Logout</a>
   </UserAuth>

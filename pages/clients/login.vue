@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const setUser = () => {
+import { userStore } from '~/stores/user'
+
+const setUser = async () => {
   if (typeof window !== 'undefined') {
-    localStorage.setItem('user', JSON.stringify({
-      name: 'shawn'
-    }))
+    userStore.login()
     return navigateTo('/clients/profile')
   }
 }

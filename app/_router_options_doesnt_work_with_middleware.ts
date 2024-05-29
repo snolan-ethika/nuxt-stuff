@@ -5,7 +5,7 @@ export default <RouterConfig>{
         {
             name: 'home',
             path: '/',
-            component: () => import('~/pages/home.vue').then(r => r.default || r)
+            component: () => import('~/pages/index.vue').then(r => r.default || r)
         },
         {
             name: 'artist',
@@ -19,7 +19,7 @@ export default <RouterConfig>{
         },
         {
             name: 'clients-login',
-            path: '/login',
+            path: '/clients/login',
             component: () => import('~/pages/clients/login.vue').then(r => r.default || r)
         },
         {
