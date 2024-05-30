@@ -14,6 +14,10 @@ watch(userStore.state, (value) => {
   const theUser: any = value?.user
   user.value = theUser ? theUser : {}
 })
+
+definePageMeta({
+  middleware: ['clients-only']
+})
 </script>
 
 <template>
