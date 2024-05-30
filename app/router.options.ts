@@ -8,13 +8,18 @@ export default <RouterConfig>{
             component: () => import('~/pages/index.vue').then(r => r.default || r)
         },
         {
-            name: 'artist',
-            path: '/artist',
+            name: 'artists',
+            path: '/artists',
             component: () => import('~/pages/artists/index.vue').then(r => r.default || r)
         },
         {
-            name: 'talent',
-            path: '/talent',
+            name: 'artists/:artist',
+            path: '/artists/:artist',
+            component: () => import('~/pages/artists/[artist]/index.vue').then(r => r.default || r)
+        },
+        {
+            name: 'talents',
+            path: '/talents',
             component: () => import('~/pages/talents/index.vue').then(r => r.default || r)
         },
         {
