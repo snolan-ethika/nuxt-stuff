@@ -58,7 +58,7 @@ typings/
 
 # dotenv environment variables file
 .env
-.env.build
+.env.*
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -93,3 +93,5 @@ sw.*
 
 # Vercel
 .vercel
+
+**/copy.*
