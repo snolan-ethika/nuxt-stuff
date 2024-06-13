@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { userStore } from '~/stores/user'
+const { header } = useHeaderComp()
+header().setHeader({
+  title: 'test',
+  transparent: true
+})
+const something = header().header
+console.log('something', something)
 
 const theUser = userStore.getUser()
 const user: any = ref(theUser)
